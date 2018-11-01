@@ -16,7 +16,7 @@ cd PATH_TO_FILE/cl_dictionary
 Usage:
 
 For UNIX based OS:-
-$ -> cli_dic {word_to_search}
+$ -> ./cli_dic {word_to_search}
 
 For Windows:-
 $ -> python cli_dic.py {word_to_search}
@@ -34,4 +34,3 @@ ${list of words seperated by lines}
 If no result found at all:-
 $No Match Found!!!
 $Result Not Found!!!
-
