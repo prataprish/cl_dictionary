@@ -5,7 +5,7 @@ import fetch_online
 class Dictionay(object):
 
     def __init__(self):
-        self.connection = sqlite3.connect('dictionay.db')
+        self.connection = sqlite3.connect('dictionary.db')
         if self.init_db():
             pass
         else:
