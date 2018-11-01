@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from db import Dictionay
+from db import Dictionary
 import sys
 
 word = '_'.join(sys.argv[1:]).lower()
