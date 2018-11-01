@@ -14,11 +14,13 @@ $ -> mv cli_dic.py cli_dic
 $ -> chmod a+x cli_dic
 
 For Windows:-
-cd PATH_TO_FILE/cl_dictionary
+
+$ -> cd PATH_TO_FILE/cl_dictionary
 
 Usage:
 
 For UNIX based OS:-
+
 $ -> ./cli_dic {word_to_search}
 
 For Windows:-
