@@ -39,4 +39,3 @@ def fetch(word):
         synonyms = [synonym['id'] for synonym in result['synonyms']]
 
     return {'meaning':meaning,'synonyms':synonyms}
-    
