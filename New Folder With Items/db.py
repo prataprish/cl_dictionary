@@ -7,7 +7,7 @@ class Dictionary(object):
     def __init__(self):
         self.connection = sqlite3.connect('dictionary.db')
         if self.init_db():
-            pass
+            self.connection.commit( )
         else:
             print('Database Connection Error!!!')
 
@@ -19,6 +19,7 @@ class Dictionary(object):
                             "syn_group INTEGER NOT NULL," \
                             "hits INTEGER DEFAULT 0," \
                             "meaning TEXT)")
+
             self.connection.commit()
             return True
         except Exception:
@@ -64,7 +65,7 @@ class Dictionary(object):
                     self.connection.execute("UPDATE words SET hits = hits + 1 WHERE id = ?",tuple([meaning[2]]))
                     self.connection.commit()
                     yield 'Here is what I found:'
-                    yield meaning[0]
+                    yield meaning[0].encode('ascii')
                     return
                 else:
                     if connection_ok():
@@ -72,13 +73,12 @@ class Dictionary(object):
                     else:
                         yield 'Cannot find meaning, but a few similar word:'.encode('ascii')
                         for syn in self.get_syn(word,meaning[1]):
-                            yield syn
+                            yield syn.encode('ascii')
                         return
             result = fetch_online.fetch(word)
             if result:
                 self.add_word(word,result['meaning'],result['synonyms'])
-            yield 'Here is what I found:'
-            yield result['meaning']
+            yield result['meaning'].encode('ascii')
             return
         except Exception:
             return

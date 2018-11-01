@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from db import Dictionay
 import sys
 
 word = '_'.join(sys.argv[1:]).lower()
 
-dic = Dictionay()
+dic = Dictionary()
 meaning = list(dic.get_meaning(word))
 meaning = meaning[:min(len(meaning),5)]
 
